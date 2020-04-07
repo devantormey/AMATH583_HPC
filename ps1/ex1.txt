@@ -1,0 +1,24 @@
+1. What is the host name of the computer as reported by your linux environment? (You will need to find the right Linux command to execute for this. I suggest searching the web.)
+
+devan-VirtualBox
+
+2. How would you specify the name of an output file when you use the compiler if you wanted the executable to have a name other than a.out?
+
+-o yourname
+
+3. What happens if you type
+
+a.out: command not found. One is trying to run an executable file the other is searching you bash profiles for some command line tool called a.out
+
+4. What happens if you type: c++ --version 
+
+c++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+5. (AMATH 583 only). What do the -I and -l flags do in the command we used to build a.out?
+
+-L is showing where our required linked files are (.so) and -I is telling the compiler where our include files are (.h)
+

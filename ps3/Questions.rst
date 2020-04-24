@@ -74,11 +74,17 @@ All-Pairs
 ---------
 
 15. What do you observe about the different approaches to doing the similarity computation?  Which algorithm (optimizations) are most effective?  Does it pay to make a transpose of A vs a copy of A vs just passing in A itself.  What about passing in A twice vs passing it in once (mult_trans_3 vs mult_trans_4)?
-
+-For a lot of these the similarity transform operation starts off being super effective getting like 6 GFLOPS. But as the matrices get larger and larger this efficiency starts to wear off. My guess is the cost of that extra operation becomes more and more heavily weighted.
+-It seems they operate with roughly the same efficiency until the matrices become sufficiently large, then a single A becomes slower. The process of copying the data may start to weigh down on the efficiency.
 
 
 16. What is the best performance over all the algorithms that you observed for the case of 1024 images?  What would the execution time be for 10 times as many images?  For 60 times as many images?  (Hint: the answer is not cubic but still potentially a problem.)  What if we wanted to do, say 56 by 56 images instead of 28 by 28?
 
+Mult_trans_3 and Mult_3 seem to perform the best at 1024. 
+
+my data is showing the relationship between GFLOPS and number of images is logarithmic. So for every doubling of the number of images I drop 1 GFLOP. So it should run about 8GFLOPS slower or at whatever percentage that slope would take you (as it can't be negative)
+
+I don't think it will be cubic. I think it's something like N^2Log(N). So the result is that it would be N^2LogN slower.
 
 
 About PS3
@@ -86,6 +92,7 @@ About PS3
 
 
 17. The most important thing I learned from this assignment was ...
-
+Memory matters. If you know how much data you are going to be moving always use the minimum memory data type.
 
 18. One thing I am still not clear on is ...
+Problem 16. The results are really clicking for me.

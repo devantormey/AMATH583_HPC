@@ -64,9 +64,11 @@ void run_benchmark(int i, F f, const Mat& A, const Mat& B, Mat& S, V1& layout, V
     times.push_back(g);
     if (g < 2.0) {
       layout[i] = true;
+      //why do this?
     }
   } else {
-    times.push_back(-1.0);
+      times.push_back(-1);
+      //layout[i] = true;
   }
 }
 
@@ -103,18 +105,21 @@ int main(int argc, char* argv[]) {
 #endif
 
     num_images = A.num_rows();
-
+    //std::cout << "finding similarity" << std::endl;
     Matrix similarity(num_images, num_images);
+   // std::cout << "taking transpose" << std::endl;
     Matrix B = transpose(A);
+   // std::cout << "making c" << std::endl;
     Matrix C = A;
 
     times.push_back(num_images);
-
+    //std::cout << "running benchmark mult" << std::endl;
     run_benchmark(0, mult_0, A, B, similarity, layout, times);
     run_benchmark(1, mult_1, A, B, similarity, layout, times);
     run_benchmark(2, mult_2, A, B, similarity, layout, times);
     run_benchmark(3, mult_3, A, B, similarity, layout, times);
 
+    //std::cout << "running benchmark mult trans" << std::endl;
     run_benchmark(4, mult_trans_0, A, C, similarity, layout, times);
     run_benchmark(5, mult_trans_1, A, C, similarity, layout, times);
     run_benchmark(6, mult_trans_2, A, C, similarity, layout, times);
@@ -133,10 +138,10 @@ int main(int argc, char* argv[]) {
       double g = gflops(similarity, A, t.elapsed());
       times.push_back(g);
       if (g < 2.0) {
-	layout[12] = true;
+	       layout[12] = true;
       }
     } else {
-      times.push_back(-1.0);
+        times.push_back(-1.0);
     }
 
     //run_benchmark(13, mult_trans_5, A, A, similarity, layout, times); // Extra Credit

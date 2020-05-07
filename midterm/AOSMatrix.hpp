@@ -53,14 +53,23 @@ public:
 
   void matvec(const Vector& x, Vector& y) const {
     // Write Me 
+    for (size_t k = 0; k < storage_.size(); ++k) {
+      y(std::get<0>(storage_[k])) += std::get<2>(storage_[k]) * x(std::get<1>(storage_[k]));
+    }
   }
 
   void t_matvec(const Vector& x, Vector& y) const {
-    // Write Me 
+    for (size_t k = 0; k < storage_.size(); ++k) {
+      y(std::get<1>(storage_[k])) += std::get<2>(storage_[k]) * x(std::get<0>(storage_[k]));
+    }
   }
 
   void matmat(const Matrix& B, Matrix& C) const {
-    // Write Me 
+    for (size_t j = 0; j < B.num_cols(); ++j) {
+      for (size_t k = 0; k < storage_.size(); ++k) {
+        C(std::get<0>(storage_[k]),j) += std::get<2>(storage_[k]) * B(std::get<1>(storage_[k]),j);
+      }
+    }
   }
 
 private:

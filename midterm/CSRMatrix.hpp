@@ -75,11 +75,21 @@ public:
   }
 
   void t_matvec(const Vector& x, Vector& y) const {
-    // Write Me 
+     for (size_t i = 0; i < num_rows_; ++i) {
+      for (size_t j = row_indices_[i]; j < row_indices_[i + 1]; ++j) {
+        y(col_indices_[j]) += storage_[j] * x(i);
+      }
+    }
   }
 
   void matmat(const Matrix& B, Matrix& C) const {
-    // Write Me 
+    for (size_t k = 0; k < B.num_cols(); ++k) {
+      for (size_t i = 0; i < num_rows_; ++i) {
+        for (size_t j = row_indices_[i]; j < row_indices_[i + 1]; ++j) {
+          C(i,k) += storage_[j] * B(col_indices_[j],k);
+        }
+      }
+    }    
   }
 
 private:

@@ -29,6 +29,7 @@ void header(const std::string& msg = "") {
   os_ << std::setw(12) << std::right << "NNZ";
   os_ << std::setw(8) << std::right << "NRHS";
   os_ << std::setw(12) << std::right << "COO";
+  //os_ << std::setw(12) << std::right << "COO^T";
   os_ << std::setw(12) << std::right << "CSR";
   os_ << std::setw(12) << std::right << "CSC";
 #ifdef __583

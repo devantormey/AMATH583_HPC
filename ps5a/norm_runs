@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#this should run the norm_order program for a bunch of sizes
+
+echo "Build Norm order"
+make norm_order.exe
+
+echo "Running"
+./norm_order.exe 1000000 > norm_order.log
+./norm_order.exe 500000 >> norm_order.log
+./norm_order.exe 100000 >> norm_order.log
+./norm_order.exe 50000 >> norm_order.log
+./norm_order.exe 10000 >> norm_order.log
+./norm_order.exe 5000 >> norm_order.log
+./norm_order.exe 1000 >> norm_order.log
+./norm_order.exe 500 >> norm_order.log
+./norm_order.exe 100 >> norm_order.log
+./norm_order.exe 50 >> norm_order.log
+
+echo "Parsing And Plotting"
+python parse_norm_order.py

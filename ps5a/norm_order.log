@@ -1,0 +1,85 @@
+Calling two_norm first time: 1154.56
+Calling two_norm second time: 1154.56
+Calling two_norm with reversed values: 1154.56
+# Norms differ!
+# Absolute difference: 1.25251e-05
+# Relative difference: 1.08484e-08
+Calling two_norm with sorted values: 1154.56
+# Norms differ!
+# Absolute difference: 1.13687e-12
+# Relative difference: 9.84674e-16
+Calling two_norm first time: 816.409
+Calling two_norm second time: 816.409
+Calling two_norm with reversed values: 816.409
+# Norms differ!
+# Absolute difference: 1.7713e-05
+# Relative difference: 2.16962e-08
+Calling two_norm with sorted values: 816.409
+# Norms differ!
+# Absolute difference: 6.82121e-13
+# Relative difference: 8.35514e-16
+Calling two_norm first time: 365.378
+Calling two_norm second time: 365.378
+Calling two_norm with reversed values: 365.378
+# Norms differ!
+# Absolute difference: 3.95783e-05
+# Relative difference: 1.08321e-07
+Calling two_norm with sorted values: 365.378
+# Norms differ!
+# Absolute difference: 2.27374e-13
+# Relative difference: 6.22297e-16
+Calling two_norm first time: 258.148
+Calling two_norm second time: 258.148
+Calling two_norm with reversed values: 258.148
+# Norms differ!
+# Absolute difference: 5.60184e-05
+# Relative difference: 2.17001e-07
+Calling two_norm with sorted values: 258.148
+# Norms differ!
+# Absolute difference: 5.68434e-14
+# Relative difference: 2.20197e-16
+Calling two_norm first time: 116.015
+Calling two_norm second time: 116.015
+Calling two_norm with reversed values: 116.014
+# Norms differ!
+# Absolute difference: 0.000124649
+# Relative difference: 1.07442e-06
+Calling two_norm with sorted values: 116.015
+Calling two_norm first time: 81.9772
+Calling two_norm second time: 81.9772
+Calling two_norm with reversed values: 81.977
+# Norms differ!
+# Absolute difference: 0.000176403
+# Relative difference: 2.15186e-06
+Calling two_norm with sorted values: 81.9772
+Calling two_norm first time: 36.8653
+Calling two_norm second time: 36.8653
+Calling two_norm with reversed values: 36.865
+# Norms differ!
+# Absolute difference: 0.000392268
+# Relative difference: 1.06406e-05
+Calling two_norm with sorted values: 36.8653
+Calling two_norm first time: 26.2769
+Calling two_norm second time: 26.2769
+Calling two_norm with reversed values: 26.2763
+# Norms differ!
+# Absolute difference: 0.000550339
+# Relative difference: 2.09438e-05
+Calling two_norm with sorted values: 26.2769
+# Norms differ!
+# Absolute difference: 3.55271e-15
+# Relative difference: 1.35203e-16
+Calling two_norm first time: 11.7739
+Calling two_norm second time: 11.7739
+Calling two_norm with reversed values: 11.7727
+# Norms differ!
+# Absolute difference: 0.00122829
+# Relative difference: 0.000104322
+Calling two_norm with sorted values: 11.7739
+Calling two_norm first time: 8.18174
+Calling two_norm second time: 8.18174
+Calling two_norm with reversed values: 8.17997
+# Norms differ!
+# Absolute difference: 0.00176767
+# Relative difference: 0.000216051
+Calling two_norm with sorted values: 8.18174

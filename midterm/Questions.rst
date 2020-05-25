@@ -31,7 +31,7 @@ increasing numbers of columns?  Explain, and quantify if you can,
 using the roofline model.
 
 ANSWER:
-The multiplication is fairly similar in terms of run times. effectivly, for a matrix with n columns, you are completing n matrix-vector products. So your run time/efficiency should differ by a factor of n rather than something like n-squared. And since these operations are carried out sequentially you should find yourself closer to the left-hand side of the roofline model. The speed of these operations is almost entirely limited by the length of the columns in B.
+The multiplication is fairly similar in terms of run times. Looking across roofline.log and mmult_ps3.log it seems to get around the same performance as mult_0 mult_1 and mult_t 1 especially for the larger sizes. This puts it around 1.2-1.5 GFLOPS range
 
 How does the performance of sparse matrix by dense matrix product (in
 GFLOP/s) compare to the results you got dense matrix-matrix product in
@@ -39,7 +39,7 @@ previous assignments?  Explain, and quantify if you can, using the
 roofline model.
 
 ANSWER:
-Significantly better. The Dense matrix product is performing at around 1 GFLOPS by the time the size hits 64, the Sparse-Dense matrix product is still at 1GFLOP even at a size of 2048.
+Significantly better. The Dense matrix product is performing at around 1 GFLOPS by the time the size hits 64, the Sparse-Dense matrix product is still at 1GFLOP even at a size of 2048. Although this performance drops incredibly fast as I make the matrix larger and larger. At 64 x 64 my computer cant even finish the test! at 32 x 32 this is roughly comperable to the mult_1 performance in mmult_ps3.log. And is looking more like the higher end of roofline at around .3 GFLOPS
 
 
 APPENDED QUESTIONS

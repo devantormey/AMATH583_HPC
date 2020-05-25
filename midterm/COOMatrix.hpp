@@ -65,12 +65,12 @@ public:
     }
   }
 
-  //EXTRA CREDIT
-  void matvec_1(const Vector& x, Vector& y) const {
-    for (size_t k = 0; k < storage_.size(); ++k) {
-      y(row_indices_[k]) += storage_[k] * x(col_indices_[k]);
-    }
-  }
+  // //EXTRA CREDIT
+  // void matvec_1(const Vector& x, Vector& y) const {
+  //   for (size_t k = 0; k < storage_.size(); ++k) {
+  //     y(row_indices_[k]) += storage_[k] * x(col_indices_[k]);
+  //   }
+  // }
 
   void t_matvec(const Vector& x, Vector& y) const {
     for (size_t k = 0; k < storage_.size(); ++k) {
@@ -88,12 +88,12 @@ public:
 
   //EXTRA CREDIT
   //Attempting to do matrix-matrix transpose multiplication
-  void matmat_1(const Matrix& B, Matrix& C) const {
-    for (size_t j = 0; j < B.num_rows(); ++j) {
-      for (size_t k = 0; k < storage_.size(); ++k) {
-        C(j,col_indices_[k]) += storage_[k] * B(j,row_indices_[k]);
-      }
-  }
+  // void matmat_1(const Matrix& B, Matrix& C) const {
+  //   for (size_t j = 0; j < B.num_rows(); ++j) {
+  //     for (size_t k = 0; k < storage_.size(); ++k) {
+  //       C(j,col_indices_[k]) += storage_[k] * B(j,row_indices_[k]);
+  //     }
+  // }
 
 
 private:

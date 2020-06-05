@@ -2,47 +2,40 @@
 Questions
 =========
 
-Norm
+
+AXPY CUDA
+---------
+
+* How many more threads are run in version 2 compared to version 1? How much speedup might you expect as a result? How much speedup do you see in your plot?
+
+* How many more threads are run in version 3 compared to version 2? How much speedup might you expect as a result? How much speedup do you see in your plot? (Hint: Is the speedup a function of the number of threads launched or the number of available cores, or both?)
+
+
+* (AMATH 583) The cu_axpy_t also accepts as a second command line argument the size of the blocks to be used. Experiment with different block sizes with, a few different problem sizes (around :math:`2^{24}` plus or minus).  What block size seems to give the best performance?  Are there any aspects of the GPU as reported in deviceQuery that might point to why this would make sense?
+
+
+nvprof
+------
+
+* Looking at some of the metrics reported by nvprof, how do metrics such as occupancy and efficiency compare to the ratio of threads launched between versions 1, 2, and 3?
+
+
+norm
 ----
 
-* Look through the code for ``run()`` in ``norm_utils.hpp``.  How are we setting the number of threads for OpenMP to use?
+* Consider just the Second column for single and double.  Why might there be a difference in performance between the two?
 
-* Which version of ``norm`` provides the best parallel performance?  How do the results compare to the parallelized versions of ``norm`` from ps5?
+* Consider just the First and Second columns for single precision.  Why might there be a difference in performance between the two?
+(Hint:  What data structure are we starting with in the driver?  Our own ``Vector`` type.  What are its element types as compared to what we are sending to the GPU?)
 
-
-* Which version of ``norm`` provides the best parallel performance for larger problems (i.e., problems at the top end of the default sizes in the drivers or larger)?  How do the results compare to the parallelized versions of ``norm`` from ps5?
-
-
-* Which version of ``norm`` provides the best parallel performance for small problems (i.e., problems smller than the low end of the default sizes in the drivers)?  How do the results compare to the parallelized versions of ``norm`` from ps5?  
+* Compare and contrast strided partitioning for task-based parallelism (e.g., OpenMP or C++ tasks) with strided partitioning for GPU.  Why is it bad in the former case but good (if it is) in the latter case?
 
 
-Sparse Matrix-Vector Product
-----------------------------
+About PS7
+---------
 
-* How does ``pmatvec.cpp`` set the number of OpenMP threads to use?
-
-* (For discussion on Piazza.) What characteristics of a matrix would make it more or less likely to exhibit an error  if improperly parallelized?  Meaning, if, say, you parallelized ``CSCMatrix::matvec`` with just basic  columnwise partitioning -- there would be potential races with the same locations in ``y`` being read and written by multiple threads.  But what characteristics of the matrix give rise to that kind of problem?  Are there ways to maybe work around / fix that if we knew some things in advance about the (sparse) matrix?
-
-* Which methods did you parallelize?  What directives did you use?  How much parallel speedup did you see for 1, 2, 4, and 8 threads?
+* The most important thing I learned from this assignment was ...
 
 
-Sparse Matrix Dense Matrix Product (AMATH583 Only)
---------------------------------------------------
-
-
-* Which methods did you parallelize?  What directives did you use?  How much parallel speedup did you see for 1, 2, 4, and 8 threads?  How does the parallel speedup compare to sparse matrix by vector product?
-
-
-PageRank Reprise
-----------------
-
-* Describe any changes you made to pagerank.cpp to get parallel speedup.  How much parallel speedup did you get for 1, 2, 4, and 8 threads?
-
-* (EC) Which functions did you parallelize?  How much additional speedup did you achieve?
-
-
-Load Balanced Partitioning with OpenMP (Extra Credit)
------------------------------------------------------
-
-* Are there any choices for scheduling that make an improvement in the parallel performance (most importantly, scalability) of pagerank?
+* One thing I am still not clear on is ...
 
